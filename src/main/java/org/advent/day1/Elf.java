@@ -27,4 +27,11 @@ public class Elf implements Comparable<Elf> {
     public int compareTo(Elf that) {
         return this.getTotalCalories() - that.getTotalCalories();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (!(obj instanceof Elf other)) return false;
+        return this.getTotalCalories() == other.getTotalCalories();
+    }
 }
